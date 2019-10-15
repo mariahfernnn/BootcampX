@@ -3,7 +3,7 @@ CREATE TABLE teachers (
   name TEXT,
   start_date DATE,
   end_date DATE,
-  is_active TEXT
+  is_active BOOLEAN DEFAULT true
 )
 
 CREATE assistance_requests (
@@ -11,9 +11,9 @@ CREATE assistance_requests (
   assignment_id INTEGER REFERENCES assignments(id) ON DELETE CASCADE,
   student_id INTEGER REFERENCES students(id) ON DELETE CASCADE,
   teacher_id INTEGER REFERENCES teachers(id) ON DELETE CASCADE,
-  created_at DATE,
-  started_at DATE,
-  completed_at DATE,
+  created_at TIMESTAMP,
+  started_at TIMESTAMP,
+  completed_at TIMESTAMP,
   student_feedback TEXT,
   teacher_feedback TEXT
 )
