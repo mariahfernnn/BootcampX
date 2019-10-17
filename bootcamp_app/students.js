@@ -1,6 +1,7 @@
-// Connect to the bootcampx database 
+// Install pg
 const { Pool } = require('pg');
 
+// Connect to the bootcampx database 
 const pool = new Pool({
   user: 'vagrant',
   password: '123',
